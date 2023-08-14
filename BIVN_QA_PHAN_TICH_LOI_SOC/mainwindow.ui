@@ -103,13 +103,13 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionLoadGray"/>
-   <addaction name="actionLoadBlack"/>
+   <addaction name="actionRemove"/>
    <addaction name="actionAnalize"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionLoadGray">
    <property name="text">
-    <string>LoadGray</string>
+    <string>Load Images</string>
    </property>
   </action>
   <action name="actionLoadBlack">
@@ -120,6 +120,11 @@
   <action name="actionAnalize">
    <property name="text">
     <string>Analize</string>
+   </property>
+  </action>
+  <action name="actionRemove">
+   <property name="text">
+    <string>Remove</string>
    </property>
   </action>
  </widget>

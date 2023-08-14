@@ -21,6 +21,12 @@ private slots:
 
     void on_actionAnalize_triggered();
 
+    void on_actionLoadGray_triggered();
+
+    void on_actionLoadBlack_triggered();
+
+    void on_actionRemove_triggered();
+
 private:
     Ui::MainWindow *ui;
     std::shared_ptr<QProgressBar> progressBar = std::make_shared<QProgressBar>(new QProgressBar());

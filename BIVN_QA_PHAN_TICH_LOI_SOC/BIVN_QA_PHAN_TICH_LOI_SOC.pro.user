@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 11.0.1, 2023-08-10T10:04:47. -->
+<!-- Written by QtCreator 11.0.1, 2023-08-14T16:10:59. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -243,7 +243,7 @@
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/BIVN/BIVN_QA_PHAN_TICH_LOI_SOC/build-BIVN_QA_PHAN_TICH_LOI_SOC-Desktop_Qt_6_5_2_MSVC2019_64bit-Release</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/BIVN/BIVN_QA_PHAN_TICH_LOI_SOC/builds</value>
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>

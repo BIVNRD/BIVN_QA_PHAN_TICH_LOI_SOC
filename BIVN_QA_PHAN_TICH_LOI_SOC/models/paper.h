@@ -20,7 +20,8 @@ public:
 
 public:
     static std::vector<std::shared_ptr<Paper>> items;
-    static void scan();
+    static void scan(QString dir);
+    static void scan(QStringList files);
 };
 
 #endif // PAPER_H

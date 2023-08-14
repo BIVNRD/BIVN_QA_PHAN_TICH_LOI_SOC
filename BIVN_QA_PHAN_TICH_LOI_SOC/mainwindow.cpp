@@ -3,11 +3,13 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QStandardItemModel>
+#include <QFileDialog>
 
 #include <opencv2/core.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include <iostream>
+#include <set>
 
 
 #include "models/paper.h"
@@ -18,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainW
     progressBar->setMaximumWidth(300);
     ui->statusBar->addWidget(progressBar.get());
     setWindowState(Qt::WindowMaximized);
-    enumFiles();
+//    enumFiles();
 }
 
 MainWindow::~MainWindow(){
@@ -26,7 +28,7 @@ MainWindow::~MainWindow(){
 }
 
 void MainWindow::enumFiles(){
-    Paper::scan();
+//    Paper::scan();
 
     QStandardItemModel *model = (QStandardItemModel*)ui->tableView->model();
     if(model == nullptr){
@@ -61,6 +63,41 @@ void MainWindow::on_tableView_pressed(const QModelIndex &index){
 }
 
 
+
+
+
+void MainWindow::on_actionLoadGray_triggered(){
+    QFileDialog dialog(this);
+    dialog.setFileMode(QFileDialog::ExistingFiles);
+    dialog.setNameFilter(tr("Images (*.bmp *.jpg)"));
+    QStringList fileNames;
+    if (dialog.exec()){
+        fileNames = dialog.selectedFiles();
+        Paper::scan(fileNames);
+        enumFiles();
+    }
+}
+
+
+void MainWindow::on_actionLoadBlack_triggered()
+{
+
+}
+
+void MainWindow::on_actionRemove_triggered()
+{
+    std::set<int, std::greater<int>> indexs;
+    auto sels = ui->tableView->selectionModel()->selectedRows();
+    for(auto it : sels){
+        indexs.insert(it.row());
+    }
+
+    for(auto it : indexs){
+        Paper::items.erase(Paper::items.begin() + it);
+    }
+    enumFiles();
+}
+
 void MainWindow::on_actionAnalize_triggered(){
     int rows = ui->tableView->model()->rowCount();
     progressBar->setMaximum(rows);
@@ -72,4 +109,3 @@ void MainWindow::on_actionAnalize_triggered(){
     }
 
 }
-

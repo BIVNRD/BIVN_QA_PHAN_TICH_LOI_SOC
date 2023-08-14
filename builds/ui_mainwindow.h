@@ -30,6 +30,7 @@ public:
     QAction *actionLoadGray;
     QAction *actionLoadBlack;
     QAction *actionAnalize;
+    QAction *actionRemove;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QTableView *tableView;
@@ -51,6 +52,8 @@ public:
         actionLoadBlack->setObjectName("actionLoadBlack");
         actionAnalize = new QAction(MainWindow);
         actionAnalize->setObjectName("actionAnalize");
+        actionRemove = new QAction(MainWindow);
+        actionRemove->setObjectName("actionRemove");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
@@ -98,7 +101,7 @@ public:
         MainWindow->setStatusBar(statusBar);
 
         toolBar->addAction(actionLoadGray);
-        toolBar->addAction(actionLoadBlack);
+        toolBar->addAction(actionRemove);
         toolBar->addAction(actionAnalize);
 
         retranslateUi(MainWindow);
@@ -109,9 +112,10 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        actionLoadGray->setText(QCoreApplication::translate("MainWindow", "LoadGray", nullptr));
+        actionLoadGray->setText(QCoreApplication::translate("MainWindow", "Load Images", nullptr));
         actionLoadBlack->setText(QCoreApplication::translate("MainWindow", "LoadBlack", nullptr));
         actionAnalize->setText(QCoreApplication::translate("MainWindow", "Analize", nullptr));
+        actionRemove->setText(QCoreApplication::translate("MainWindow", "Remove", nullptr));
         imageView->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
     } // retranslateUi
